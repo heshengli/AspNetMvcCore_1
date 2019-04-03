@@ -31,8 +31,17 @@ namespace WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //JsonInputFormatter 为默认格式化程序且基于 Json.NET。可以通过AddXmlSerializerFormatters转换为xml
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddXmlSerializerFormatters();
+
+            //services.AddMvc(options =>
+            //{
+            //    options.MaxModelValidationErrors = 50;
+            //    options.AllowValidatingTopLevelNodes = false;
+            //}).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddMvc(options=>options.MaxModelValidationErrors=50).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
